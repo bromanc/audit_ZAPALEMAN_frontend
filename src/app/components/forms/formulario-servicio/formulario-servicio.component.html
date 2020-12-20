@@ -1,0 +1,51 @@
+<div class="contenedor">
+    <div class="cabecera">
+        <h1 class="titulo">Registrar Servicio</h1>
+    </div>
+    <div class="formulario">
+        <form #formularioServicio="ngForm" (ngSubmit)="enviarFormulario(formularioServicio)">
+            <div>
+                <p class="subtitulo">Datos del servicio</p>
+            </div>
+            <div>
+                <label for="nombreServicio">Nombre</label>
+                <input id="nombreServicio" type="text" name="nombre" [(ngModel)]="nombreFormulario" required
+                    #nombreCampo="ngModel">
+            </div>
+            <div *ngIf="nombreCampo.touched && nombreCampo.errors">
+                <p class="error" *ngIf="nombreCampo.errors.required">* Campo Requerido</p>
+            </div>
+            <div>
+                <label for="descripcionServicio">Descripcion</label>
+                <textarea id="descripcionServicio" type="text" name="descripcion" cols="30" rows="10"
+                    [(ngModel)]="descripcionFormulario" required #descripcionCampo="ngModel"
+                    placeholder="Escriba la descripcion del servicio"></textarea>
+            </div>
+            <div *ngIf="descripcionCampo.touched && descripcionCampo.errors">
+                <p class="error" *ngIf="descripcionCampo.errors.required">* Campo requerido</p>
+            </div>
+            <div>
+                <label for="precioServicio">Precio</label>
+                <input id="precioServicio" type="number" name="precio" step="0.01" [(ngModel)]="precioFormulario"
+                    required min="0" #precioCampo="ngModel">
+            </div>
+            <div *ngIf="precioCampo.touched && precioCampo.errors">
+                <p class="error" *ngIf="precioCampo.errors.required">* Campo Requerido</p>
+                <p class="error" *ngIf="precioCampo.errors.min">* No se aceptan valores negativos</p>
+            </div>
+            <div>
+                <label for="imagenServicio">Imagen URL</label>
+                <input id="imagenServicio" type="text" name="imagen" [(ngModel)]="imagenFormulario" required
+                    #imagenCampo="ngModel">
+            </div>
+            <div *ngIf="!imagenCampo.errors">
+                <img [src]="locationImages + imagenFormulario">
+            </div>
+            <div *ngIf="imagenCampo.touched && imagenCampo.errors">
+                <p class="error" *ngIf="imagenCampo.errors.required">* Campo Requerido</p>
+            </div>
+            <button class="boton eliminar" type="reset">Cancelar</button>
+            <button class="boton" type="submit" [disabled]="!formularioServicio.form.valid">Aceptar</button>
+        </form>
+    </div>
+</div>

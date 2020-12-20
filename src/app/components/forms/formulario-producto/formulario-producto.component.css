@@ -1,0 +1,87 @@
+.contenedor {
+  margin: 20px 0px;
+}
+.cabecera {
+  margin: 0px auto;
+  border: 1px solid #ff714d;
+  background-color: #ff714d;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.titulo {
+  margin: 10px 0px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  text-align: center;
+  color: #ffffff;
+}
+.formulario {
+  margin: 0px auto;
+  border: 1px solid #ff714d;
+  background-color: white;
+  width: 50%;
+  text-align: center;
+}
+.subtitulo {
+  margin-top: 15px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  text-align: center;
+  color: #ff4c1f;
+}
+.error {
+  margin-bottom: 0px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 12px;
+  text-align: center;
+  color: red;
+}
+label {
+  display: inline-block;
+  width: 80px;
+  text-align: right;
+  margin-right: 15px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+}
+input {
+  margin-top: 4px;
+  width: 200px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+input[type="number"] {
+  margin-top: 4px;
+  margin-right: 120px;
+  width: 80px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+textarea {
+  margin-top: 4px;
+  width: 200px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  vertical-align: top;
+}
+img {
+  height: 100px;
+  margin-top: 5px;
+}
+.boton {
+  margin: 20px 5px;
+  background: #ff4c1f;
+  border-radius: 35px;
+  border: none;
+  outline: none;
+  padding: 5px 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 12px;
+  text-align: center;
+  color: #ffffff;
+}
+.boton[disabled] {
+  background-color: #ff4c1f39;
+}
+.eliminar {
+  background: red;
+}

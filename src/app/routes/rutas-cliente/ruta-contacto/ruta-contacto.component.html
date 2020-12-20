@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="top">
+        <h1 class="title">Contacto</h1>
+    </div>
+    <div class="form">
+        <form #formularioContacto="ngForm" (ngSubmit)="enviarFormulario(formularioContacto)">
+            <div>
+                <p class="subtitle">Datos Personales</p>
+            </div>
+            <div>
+                <label for="nombre">Nombre</label>
+                <input id="nombre" type="text" name="nombre" [(ngModel)]="nombreFormulario" required
+                    #nombreCampo="ngModel">
+            </div>
+            <div *ngIf="nombreCampo.touched && nombreCampo.errors">
+                <p class="error" *ngIf="nombreCampo.errors.required">* Campo Requerido</p>
+            </div>
+            <div>
+                <label for="apellido">Apellido</label>
+                <input id="apellido" type="text" name="apellido" [(ngModel)]="apellidoFormulario" required
+                    #apellidoCampo="ngModel">
+            </div>
+            <div *ngIf="apellidoCampo.touched && apellidoCampo.errors">
+                <p class="error" *ngIf="apellidoCampo.errors.required">* Campo Requerido</p>
+            </div>
+            <div>
+                <label for="email">Correo electrónico</label>
+                <input id="email" type="text" name="email" [(ngModel)]="emailFormulario" required email
+                    #emailCampo="ngModel">
+            </div>
+            <div *ngIf="emailCampo.touched && emailCampo.errors">
+                <p class="error" *ngIf="emailCampo.errors.required">* Campo Requerido</p>
+                <p class="error" *ngIf="emailCampo.errors.email">* Correo electrónico no válido</p>
+            </div>
+            <div>
+                <label for="telefono">Teléfono</label>
+                <input id="telefono" type="text" name="telefono" [(ngModel)]="telefonoFormulario" required minlength="7"
+                    maxlength="10" #telefonoCampo="ngModel">
+            </div>
+            <div *ngIf="telefonoCampo.touched && telefonoCampo.errors">
+                <p class="error" *ngIf="telefonoCampo.errors.required">* Campo Requerido</p>
+                <p class="error" *ngIf="telefonoCampo.errors.minlength">* Teléfono no valido</p>
+                <p class="error" *ngIf="telefonoCampo.errors.maxlength">* Teléfono no valido</p>
+            </div>
+            <div>
+                <label for="mensaje">Mensaje</label>
+                <textarea name="mensaje" id="mensaje" cols="30" rows="10" [(ngModel)]="mensajeFormulario"
+                    required #mensajeCampo="ngModel" placeholder="Escriba su mensaje"></textarea>
+            </div>
+            <div *ngIf="mensajeCampo.touched && mensajeCampo.errors">
+                <p class="error" *ngIf="mensajeCampo.errors.required">* Campo Requerido</p>
+            </div>
+            <button class="boton eliminar" type="reset">Cancelar</button>
+            <button class="boton" type="submit" [disabled]="!formularioContacto.form.valid">Enviar</button>
+        </form>
+    </div>
+</div>

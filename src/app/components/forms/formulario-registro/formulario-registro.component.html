@@ -1,0 +1,65 @@
+<div class="contenedor">
+    <div class="cabecera">
+        <h1 class="titulo">Registrar Usuario</h1>
+    </div>
+    <div class="formulario">
+        <form #formularioUsuario="ngForm" (ngSubmit)="enviarFormulario(formularioUsuario)">
+            <div>
+                <p class="subtitulo">Datos Personales</p>
+            </div>
+            <div>
+                <label for="nombreUsuario">Nombre</label>
+                <input id="nombreUsuario" type="text" name="nombre" [(ngModel)]="nombreFormulario" required
+                    #nombreCampo="ngModel">
+            </div>
+            <div *ngIf="nombreCampo.touched && nombreCampo.errors">
+                <p class="error" *ngIf="nombreCampo.errors.required">* Campo Requerido</p>
+            </div>
+            <div>
+                <label for="apellidoUsuario">Apellido</label>
+                <input id="apellidoUsuario" type="text" name="apellido" [(ngModel)]="apellidoFormulario" required
+                    #apellidoCampo="ngModel">
+            </div>
+            <div *ngIf="apellidoCampo.touched && apellidoCampo.errors">
+                <p class="error" *ngIf="apellidoCampo.errors.required">* Campo requerido</p>
+            </div>
+            <div>
+                <label for="emailUsuario">Correo electrónico</label>
+                <input id="emailUsuario" type="email" name="email" [(ngModel)]="emailFormulario" required email
+                    #emailCampo="ngModel">
+            </div>
+            <div *ngIf="emailCampo.touched && emailCampo.errors">
+                <p class="error" *ngIf="emailCampo.errors.required">* Campo requerido</p>
+                <p class="error" *ngIf="emailCampo.errors.email">* Correo electrónico no valido</p>
+            </div>
+            <div>
+                <label for="contrasenaUsuario">Contraseña</label>
+                <input id="contrasenaUsuario" type="password" name="password" [(ngModel)]="contrasenaFormulario"
+                    required minlength="8" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
+                    #contrasenaCampo="ngModel">
+            </div>
+            <div *ngIf="contrasenaCampo.touched && contrasenaCampo.errors">
+                <p class="error" *ngIf="contrasenaCampo.errors.required">* Campo requerido</p>
+                <p class="error" *ngIf="contrasenaCampo.errors.minlength">* Longitud minima 8</p>
+                <p class="error" *ngIf="contrasenaCampo.errors.pattern">* La contraseña debe tener al menos un numero,
+                    una mayuscula y minuscula
+                </p>
+            </div>
+            <div>
+                <label for="contrasenaConfirmacionUsuario">Confirmar Contraseña</label>
+                <input id="contrasenaConfirmacionUsuario" type="password" [(ngModel)]="contrasenaConfirmacionFormulario"
+                    [ngModelOptions]="{standalone: true}" (change)="confirmarContrasena()" required
+                    #contrasenaConfirmacionCampo="ngModel">
+            </div>
+            <div *ngIf="contrasenaConfirmacionCampo.touched && (contrasenaConfirmacionCampo.errors || confirmacion)">
+                <div *ngIf="contrasenaConfirmacionCampo.errors">
+                    <p class="error" *ngIf="contrasenaConfirmacionCampo.errors.required">* Campo requerido</p>
+                </div>
+                <p class="error" *ngIf="confirmacion">* La contraseña no coincide</p>
+            </div>
+            <button class="boton eliminar" type="reset">Cancelar</button>
+            <button class="boton" type="submit"
+                [disabled]="!formularioUsuario.form.valid || confirmacion">Aceptar</button>
+        </form>
+    </div>
+</div>

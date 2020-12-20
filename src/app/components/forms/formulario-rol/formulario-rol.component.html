@@ -1,0 +1,31 @@
+<div class="contenedor">
+    <div class="cabecera">
+        <h1 class="titulo">Registrar Nuevo Rol</h1>
+    </div>
+    <div class="formulario">
+        <form #formularioRol="ngForm" (ngSubmit)="enviarFormulario(formularioRol)">
+            <div>
+                <p class="subtitulo">Datos del rol</p>
+            </div>
+            <div>
+                <label for="nombreRol">Nombre</label>
+                <input id="nombreRol" type="text" name="nombre" [(ngModel)]="nombreFormulario" required
+                    #nombreCampo="ngModel">
+            </div>
+            <div *ngIf="nombreCampo.touched && nombreCampo.errors">
+                <p class="error" *ngIf="nombreCampo.errors.required">* Campo Requerido</p>
+            </div>
+            <div>
+                <label for="descripcionRol">Descripcion</label>
+                <textarea id="descripcionRol" type="text" name="descripcion" cols="30" rows="10"
+                    [(ngModel)]="descripcionFormulario" required #descripcionCampo="ngModel"
+                    placeholder="Escriba la descripcion del rol"></textarea>
+            </div>
+            <div *ngIf="descripcionCampo.touched && descripcionCampo.errors">
+                <p class="error" *ngIf="descripcionCampo.errors.required">* Campo requerido</p>
+            </div>
+            <button class="boton eliminar" type="reset">Cancelar</button>
+            <button class="boton" type="submit" [disabled]="!formularioRol.form.valid">Aceptar</button>
+        </form>
+    </div>
+</div>

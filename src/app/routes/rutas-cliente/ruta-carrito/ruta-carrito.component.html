@@ -1,0 +1,39 @@
+<div class="buscador">
+    <button class="boton" type="button" [routerLink]="['/factura']" disabled>Confirmar</button>
+</div>
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" class="lista" matSort>
+        <ng-container matColumnDef="nombre">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</th>
+            <td mat-cell *matCellDef="let detalle">{{obtenerNombre(detalle.producto, detalle.servicio)}}</td>
+        </ng-container>
+        <ng-container matColumnDef="imagen">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Imagen</th>
+            <td mat-cell *matCellDef="let detalle">
+                <img [src]="obteneImagen(detalle.producto, detalle.servicio)">
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="cantidad">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Cantidad</th>
+            <td mat-cell *matCellDef="let detalle">{{detalle.cantidad}}</td>
+        </ng-container>
+        <ng-container matColumnDef="subtotal">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Sub-total</th>
+            <td mat-cell *matCellDef="let detalle">${{detalle.subtotal}}</td>
+        </ng-container>
+        <ng-container matColumnDef="acciones">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Acciones</th>
+            <td mat-cell *matCellDef="let detalle; let i = index">
+                <button class="boton eliminar" type="button" (click)="eliminarDetalle(i)">Eliminar</button>
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+        <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
+        <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="5">No existen registros</td>
+        </tr>
+    </table>
+   
+
+</div>
+

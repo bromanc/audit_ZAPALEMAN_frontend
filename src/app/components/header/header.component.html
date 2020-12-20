@@ -1,0 +1,9 @@
+<div class="cabecera">
+    <div class="logo">
+        <img class="logo-img" [src]="urlLogo">
+    </div>
+    <div class="botones">
+        <button class="boton" *ngIf="!rol" (click)="irARegistroOCarrito()">{{!sesion ? 'Registrarse' : 'Carrito'}}</button>
+        <button class="boton" (click)="irALogin()">{{!sesion ? 'Iniciar Sesion' : 'Cerrar Sesion'}}</button>
+    </div>
+</div>

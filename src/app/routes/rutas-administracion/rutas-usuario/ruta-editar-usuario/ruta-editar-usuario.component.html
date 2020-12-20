@@ -1,0 +1,4 @@
+<div *ngIf="mostrarFormulario">
+    <app-formulario-usuario [usuarioEditar]="usuario" (enviarFormularioEvent)="actualizarUsuario($event)">
+    </app-formulario-usuario>
+</div>

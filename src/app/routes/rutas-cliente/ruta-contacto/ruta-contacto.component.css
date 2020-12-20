@@ -1,0 +1,89 @@
+.container {
+    margin: 20px 0px;
+  }
+  .top {
+    margin: 0px auto;
+    border: 1px solid #ff714d;;
+    background-color: #ff714d;;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .title {
+    margin: 10px 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    color: #ffffff;
+  }
+  .form {
+    margin: 0px auto;
+    border: 1px solid #ff714d;;
+    background-color: white;
+    width: 70%;
+    text-align: center;
+  }
+  .subtitle {
+    margin-top: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    text-align: center;
+    color: black;
+  }
+  .error {
+    margin-bottom: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    color: red;
+  }
+  label {
+    display: inline-block;
+    width: 140px;
+    text-align: right;
+    margin-right: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+  }
+  .short {
+    width: 200px;
+  }
+  input {
+    margin-top: 4px;
+    width: 200px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  textarea {
+    margin-top: 4px;
+    width: 200px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  .value {
+    width: 60px;
+    text-align: center;
+  }
+  .image {
+    margin: 10px 0px;
+    width: 80px;
+    height: 120px;
+  }
+  .boton {
+    margin: 20px 5px;
+    background: #3864c2;
+    border-radius: 35px;
+    border: none;
+    outline: none;
+    padding: 5px 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    color: #ffffff;
+  }
+  .boton[disabled] {
+    background-color: #455475;
+  }
+  .eliminar {
+    background: #ec4144;
+  }
+  

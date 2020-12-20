@@ -1,0 +1,11 @@
+.contenedor {
+  text-align: center;
+  margin: 20px 0px;
+}
+.banner {
+  margin: 0px 5px;
+}
+.img-carousel {
+  width: 90%;
+  height: 500px;
+}

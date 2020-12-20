@@ -1,0 +1,17 @@
+<div class="contenedor">
+    <a [routerLink]="['/productos']">
+        <img class="banner" [src]="urlBannerProductos">
+    </a>
+    <a [routerLink]="['/servicios']">
+        <img class="banner" [src]="urlBannerServicios">
+    </a>
+</div>
+<div class="contenedor">
+    <ngb-carousel #carousel [interval]="5000" [pauseOnHover]="pauseOnHover" (slide)="onSlide($event)">
+        <ng-template ngbSlide *ngFor="let img of images">
+            <div class="picsum-img-wrapper">
+                <img class="img-carousel" [src]="img">
+            </div>
+        </ng-template>
+    </ngb-carousel>
+</div>

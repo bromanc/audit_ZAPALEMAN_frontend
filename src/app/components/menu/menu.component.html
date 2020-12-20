@@ -1,0 +1,5 @@
+<div class="fondo">
+    <div class="paginas" *ngFor="let ruta of rutas">
+        <a class="link" [routerLink]="[ruta.ruta]">{{ruta.etiqueta}}</a>
+    </div>
+</div>

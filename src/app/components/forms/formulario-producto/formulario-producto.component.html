@@ -1,0 +1,69 @@
+<div class="contenedor">
+    <div class="cabecera">
+        <h1 class="titulo">Registrar Producto</h1>
+    </div>
+    <div class="formulario">
+        <form #formularioProducto="ngForm" (ngSubmit)="enviarFormulario(formularioProducto)">
+            <div>
+                <p class="subtitulo">Datos de producto</p>
+            </div>
+            <div>
+                <label for="nombreProducto">Nombre</label>
+                <input id="nombreProducto" type="text" name="nombre" [(ngModel)]="nombreFormulario" required
+                    #nombreCampo="ngModel">
+            </div>
+            <div *ngIf="nombreCampo.touched && nombreCampo.errors">
+                <p class="error" *ngIf="nombreCampo.errors.required">* Campo Requerido</p>
+            </div>
+            <div>
+                <label for="colorProducto">Color</label>
+                <input id="colorProducto" type="text" name="color" [(ngModel)]="colorFormulario" required
+                    #colorCampo="ngModel">
+            </div>
+            <div *ngIf="colorCampo.touched && colorCampo.errors">
+                <p class="error" *ngIf="colorCampo.errors.required">* Campo Requerido</p>
+            </div>
+            <div>
+                <label for="tallaProducto">Talla</label>
+                <input id="tallaProducto" type="number" name="talla" step="1" [(ngModel)]="tallaFormulario"
+                    required min="34" max="49" #tallaCampo="ngModel">
+            </div>
+            <div *ngIf="tallaCampo.touched && tallaCampo.errors">
+                <p class="error" *ngIf="tallaCampo.errors.required">* Campo Requerido</p>
+                <p class="error" *ngIf="tallaCampo.errors.min">* Fuera del limite</p>
+                <p class="error" *ngIf="tallaCampo.errors.max">* Fuera del limite</p>
+            </div>
+            <div>
+                <label for="descripcionProducto">Descripcion</label>
+                <textarea id="descripcionProducto" type="text" name="descripcion" cols="30" rows="10"
+                    [(ngModel)]="descripcionFormulario" required #descripcionCampo="ngModel"
+                    placeholder="Escriba una breve descripcion del producto"></textarea>
+            </div>
+            <div *ngIf="descripcionCampo.touched && descripcionCampo.errors">
+                <p class="error" *ngIf="descripcionCampo.errors.required">* Campo requerido</p>
+            </div>
+            <div>
+                <label for="precioProducto">Precio</label>
+                <input id="precioProducto" type="number" name="precio" step="0.01" [(ngModel)]="precioFormulario"
+                    required min="0" #precioCampo="ngModel">
+            </div>
+            <div *ngIf="precioCampo.touched && precioCampo.errors">
+                <p class="error" *ngIf="precioCampo.errors.required">* Campo Requerido</p>
+                <p class="error" *ngIf="precioCampo.errors.min">* No se aceptan valores negativos</p>
+            </div>
+            <div>
+                <label for="imagenProducto">Imagen URL</label>
+                <input id="imagenProducto" type="text" name="imagen" [(ngModel)]="imagenFormulario" required
+                    #imagenCampo="ngModel">
+            </div>
+            <div *ngIf="!imagenCampo.errors">
+                <img [src]="locationImages + imagenFormulario">
+            </div>
+            <div *ngIf="imagenCampo.touched && imagenCampo.errors">
+                <p class="error" *ngIf="imagenCampo.errors.required">* Campo Requerido</p>
+            </div>
+            <button class="boton eliminar" type="reset">Cancelar</button>
+            <button class="boton" type="submit" [disabled]="!formularioProducto.form.valid">Aceptar</button>
+        </form>
+    </div>
+</div>

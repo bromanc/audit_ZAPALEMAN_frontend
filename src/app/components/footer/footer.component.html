@@ -1,0 +1,43 @@
+<div class="contenedor">
+    <div class="izquierda columna">
+        <div>
+            <h2 class="title-left">Calzado Aleman</h2>
+        </div>
+        <div class="contacto">
+            <p class="info">info@calzadoaleman.ec</p>
+            <p class="info">servicio@calzadoaleman.ec</p>
+            <p class="info">098 141 9531</p>
+            <p class="info">Ecuador</p>
+        </div>
+    </div>
+    <div class="centro columna">
+        <img class="pie-img" [src]="urlPieImagen">
+    </div>
+    <div class="derecha columna">
+        <div class="map-site">
+            <p class="title">Menu Principal</p>
+            <br>
+            <ul class="site-map-list" *ngFor="let ruta of rutas">
+                <li>
+                    <a class="link" [routerLink]="[ruta.ruta]">{{ruta.etiqueta}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="contenedor-pie">
+    <div class="copyright columna-pie">
+        <p class="info">©2020 CalzadoAleman.com</p>
+    </div>
+    <div class="social-networks columna-pie">
+        <a [href]="urlInstagramPage" target="_blank">
+            <img class="icono" [src]="urlInstagram">
+        </a>
+        <a [href]="urlTwitterPage" target="_blank">
+            <img class="icono" [src]="urlTwitter">
+        </a>
+        <a [href]="urlFacebookPage" target="_blank">
+            <img class="icono" [src]="urlFacebook">
+        </a>
+    </div>
+</div>

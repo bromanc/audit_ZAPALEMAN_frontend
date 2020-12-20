@@ -1,0 +1,40 @@
+.lista {
+  width: 100%;
+}
+.buscador {
+  margin: 0px 30px;
+  display: inline;
+}
+.mat-form-field {
+  font-size: 14px;
+  width: 88%;
+  padding: 10px 0px 0px;
+}
+.mat-column-acciones {
+  width: 12%;
+}
+img {
+  height: 120px;
+  margin: 5px 0px;
+}
+.boton {
+  margin: 7px 5px;
+  background: #ff4c1f;
+  border-radius: 35px;
+  border: none;
+  outline: none;
+  padding: 5px 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 12px;
+  text-align: center;
+  color: #ffffff;
+}
+.eliminar {
+  background: red;
+}
+.editar {
+  background: green;
+}
+.crear {
+  margin: 0px 7px;
+}

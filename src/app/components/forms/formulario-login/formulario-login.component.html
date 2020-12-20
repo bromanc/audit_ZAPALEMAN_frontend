@@ -1,0 +1,25 @@
+<div class="contenedor">
+    <div class="cabecera">
+        <h1 class="titulo">Iniciar Sesion</h1>
+    </div>
+    <div class="formulario">
+        <form #formularioLogin="ngForm" (ngSubmit)="validarUsuario(formularioLogin)">
+            <div>
+                <p class="subtitulo">Datos de Sesion</p>
+            </div>
+            <div>
+                <label for="emailUsuario">Correo electrónico</label>
+                <input id="emailUsuario" type="email" name="email" [(ngModel)]="emailFormulario" #emailCampo="ngModel">
+            </div>
+            <div>
+                <label for="contrasenaUsuario">Contraseña</label>
+                <input id="contrasenaUsuario" type="password" name="password" [(ngModel)]="contrasenaFormulario"
+                    #contrasenaCampo="ngModel">
+            </div>
+            <div *ngIf="error">
+                <p class="error" *ngIf="error">{{error}}</p>
+            </div>
+            <button class="boton" type="submit">Aceptar</button>
+        </form>
+    </div>
+</div>

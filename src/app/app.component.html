@@ -1,0 +1,4 @@
+<app-header [rol]="rol" [sesion]="sesion"></app-header>
+<app-menu [rutas]="rol ? administrador : cliente"></app-menu>
+<router-outlet></router-outlet>
+<app-footer [rutas]="rol ? administrador : cliente"></app-footer>

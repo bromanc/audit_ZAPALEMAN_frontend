@@ -1,0 +1,15 @@
+.example-card {
+  max-width: 80%;
+}
+.boton {
+  margin: 7px 5px;
+  background: #ff4c1f;
+  border-radius: 35px;
+  border: none;
+  outline: none;
+  padding: 5px 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 12px;
+  text-align: center;
+  color: #ffffff;
+}
